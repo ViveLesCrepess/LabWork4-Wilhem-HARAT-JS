@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="wrapper">
+        <h1 id="top">Basic Geometry</h1>
+        <p>In this section, we are going to find the Area of some two-dimension shapes</p>
+        <p>You can click on any shape below:</p>
+        <ul>
+            <li>
+                <a href="#circle">Circle</a>
+            </li>
+
+            <li>
+                <a href="#triangle">Triangle</a>
+            </li>
+
+            <li>
+                <a href="#square">Square</a>
+            </li> 
+
+            <li>
+                <a href="#rectangle">Rectangle</a>
+            </li>
+
+            <section id="circle">
+                <h2>Circle Area</h2>
+                <div>
+                    <label for="radiusCircle">Enter the value of the circle's radius</label>
+                    <input type="text" id="radiusCircle">
+                </div>
+
+                <div>
+                    <label for="circle-area">Result:</label>
+                    <input type="text" id="circle-area">
+                </div>
+                <hr>
+                <button onclick="circleArea()">Calculate</button>
+            </section>
+            <br>
+            <div class="go">
+                <a href="#top">Go to top</a>
+            </div>
+
+            <section id="triangle">
+                <h2>Triangle Area</h2>
+                <div>
+                    <label for="baseTriangle">Enter the value of the triangle's base : </label>
+                    <input type="text" id="baseTriangle">
+                </div>
+
+                <div>
+                    <label for="triangleHeight">Enter the value of the triangle's vertical height : </label>
+                    <input id="triangleHeight" type="text">
+                </div>
+                <br>
+                <div>
+                    <label for="triangle-Area">Result : </label>
+                    <input type="text" id="triangle-Area">
+                </div>
+                <hr>
+                <button onclick="triangleArea()">Calculate</button>
+            </section>
+            <br>
+            <div class="go">
+                <a href="#top">Go to top</a>
+            </div>
+
+            <section id="square">
+                <h2>Square Area</h2>
+                <div>
+                    <label for="squareSide">Enter the value of the square's side : </label>
+                    <input type="text" id="squareSide">
+                </div>
+                <br>
+                <div>
+                    <label for="square-Area">Result : </label>
+                    <input type="text" id="square-Area">
+                </div>
+                <hr>
+                <button onclick="squareArea()">Calculate</button>
+            </section>
+            <br>
+            <div class="go">
+                <a href="#top">Go to top</a>
+            </div>
+
+            <section id="rectangle">
+                <h2>Rectangle Area</h2>
+                <div>
+                    <label for="lenghtRectangle">Enter the value of the rectangle's lenght : </label>
+                    <input type="text" id="lenghtRectangle">
+                </div>
+                <br>
+                <div>
+                    <label for="widthRectangle">Enter the value of the rectangle's width : </label>
+                    <input type="text" id="widthRectangle">
+                </div>
+                <br>
+                <div>
+                    <label for="rectangle-Area">Result : </label>
+                    <input type="text" id="rectangle-Area">
+                </div>
+                <hr>
+                <button onclick="rectangleArea()">Calculate</button>
+            </section>
+
+            <br>
+            <div class="go">
+                <a href="#top">Go to top</a>
+            </div>
+
+
+
+
+
+        </ul>
+    </div>
+
+    <style>
+        section{
+            width:70%; 
+            background-color: #f6f3f7;
+            border-style:dotted;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        .wrapper{
+            width:100%;
+            background-color: rgb(80, 164, 217);
+            justify-content: center;
+
+        }
+
+       
+
+        
+        .wrapper, section {
+            box-sizing: content-box; 
+
+            border: solid #1c1ec1 5px; 
+            padding: 5px;
+    
+        }
+        
+
+        .go{
+            text-align:center;
+        }       
+
+    </style>
+
+    <script>
+        function circleArea(){
+            let input = document.getElementById("radiusCircle").value;
+            let radiusStringCircle = input.trim();
+            let radiusNumberCircle = Number(radiusStringCircle);            
+            let Area = Math.PI * (radiusNumberCircle*radiusNumberCircle);
+
+            let output = document.getElementById("circle-area");
+            output.value = Area;
+        }
+
+        function triangleArea(){
+            let input = document.getElementById("baseTriangle").value;
+            let baseStringTriangle = input.trim();
+            let baseNumberTriangle = Number(baseStringTriangle);
+
+            let SecondInput = document.getElementById("triangleHeight").value;
+            let HeightStringTriangle = SecondInput.trim();
+            let HeightNumberTriangle = Number(HeightStringTriangle);
+
+            let Area = (baseNumberTriangle*HeightNumberTriangle) / (2);
+
+            let output = document.getElementById("triangle-Area");
+            output.value = Area;
+
+        }
+
+        function squareArea(){
+            let input = document.getElementById("squareSide").value;
+            let sideStringSquare = input.trim();
+            let sideNumberSquare = Number(sideStringSquare);
+
+            let Area = (sideNumberSquare*sideNumberSquare);
+
+            let output = document.getElementById("square-Area");
+            output.value = Area;
+            
+        }
+
+        function rectangleArea(){
+            let input = document.getElementById("lenghtRectangle").value;
+            let lenghtStringRectangle = input.trim();
+            let lenghtNumberRectangle = Number(lenghtStringRectangle);
+
+            let SecondInput = document.getElementById("widthRectangle").value;
+            let widthStringRectangle = SecondInput.trim();
+            let widthNumberRectangle = Number(widthStringRectangle);
+
+            let Area = (widthNumberRectangle*lenghtNumberRectangle);
+
+            let output = document.getElementById("rectangle-Area");
+            output.value = Area;
+        }
+    </script>
+</body>
+</html>
